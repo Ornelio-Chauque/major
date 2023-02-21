@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"os"
+	"github.com/Ornelio-Chauque/major/internal"
 )
 
 func main() {
-	fmt.Println(" Hello world")
+	major.Run(os.Args);
 }
