@@ -3,7 +3,7 @@ package major
 import (
 	"fmt"
 	"os/exec"
-	"syscall"
+	//"syscall"
 )
 
 
@@ -20,14 +20,15 @@ func Run(args []string) {
 	/* To be able to work with file with root previlegy we must set the effective user to previleed user (root)
 	   The Seteuid becomes inrrelevant when the application file owner uid passed to exec syscall is set to root
 	*/
-	if err :=syscall.Seteuid(0); err!=nil{
-		panic(err.Error())
-	}
+	// if err :=syscall.Seteuid(0); err!=nil{
+	// 	panic(err.Error())
+	// }
 
-	binary := exec.Command(args[1], args[2:]...);
+	//setup the command to executed and it arguments
+	cmd := exec.Command(args[1], args[2:]...);
 
-	//to get the content sent to stdout by the binary in the exec syscall
-	out, errr:= binary.Output();
+	//Run the binary/command wait it finish an then get the content sent to stdout by the binary in the exec syscall
+	out, errr:= cmd.Output();
 
 	if errr != nil{
 		switch e:= errr.(type){
