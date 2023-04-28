@@ -1,10 +1,13 @@
 package main
 
 import (
-	"os"
-	"github.com/Ornelio-Chauque/major/internal"
+	
+	"github.com/Ornelio-Chauque/major/cmd"
 )
 
 func main() {
-	major.Run(os.Args);
+	cmd.Execute()
 }
+
+
+

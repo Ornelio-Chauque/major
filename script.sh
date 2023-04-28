@@ -10,4 +10,4 @@ sudo chown root:root $1
 sudo chmod u+s $1
 
 # run the cat /etc/sudoers as previleged user
-$1 cat /etc/sudoers
+$1 --command="cat /etc/sudoers" --user="root"
