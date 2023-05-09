@@ -23,7 +23,7 @@ func init() {
 var majorCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		command:= parsingCommand(command)
-		major.Run(command)
+		major.Run(command, username)
 	},
 
 	Use:   "major",
