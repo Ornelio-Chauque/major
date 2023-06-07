@@ -15,6 +15,6 @@ var versionCmd = &cobra.Command{
 	},
 
 	Use:   "version",
-	Short: "",
-	Long:  "",
+	Short: "The version of major",
+	Long:  "The version of major",
 }
